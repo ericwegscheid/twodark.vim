@@ -18,29 +18,29 @@ endif
 
 set t_Co=256
 
-let g:colors_name="onedark"
+let g:colors_name="twodark"
 
 " Set to "256" for 256-color terminals, or
 " set to "16" to use your terminal emulator's native colors
 " (a 16-color palette for this color scheme is available; see
 " < https://github.com/joshdick/onedark.vim/blob/master/README.md >
 " for more information.)
-if !exists("g:onedark_termcolors")
-  let g:onedark_termcolors = 256
+if !exists("g:twodark_termcolors")
+  let g:twodark_termcolors = 256
 endif
 
 " Not all terminals support italics properly. If yours does, opt-in.
-if !exists("g:onedark_terminal_italics")
-  let g:onedark_terminal_italics = 0
+if !exists("g:twodark_terminal_italics")
+  let g:twodark_terminal_italics = 0
 endif
 
 " This function was borrowed from FlatColor: https://github.com/MaxSt/FlatColor/
 " It was based on one found in hemisu: https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
-  if g:onedark_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
+  if g:twodark_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
     unlet a:style.cterm
   endif
-  if g:onedark_termcolors == 16
+  if g:twodark_termcolors == 16
     let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
     let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm16 : "NONE")
   else
