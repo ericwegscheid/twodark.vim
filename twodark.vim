@@ -84,13 +84,13 @@ let s:black_dark       = { "cterm": "16"  } " 000000
 let s:visual_black     = { "cterm": "NONE"} " none
 let s:background       = { "cterm": "16"  } " 000000
 let s:bg_dark          = { "cterm": "233" } " 121212
-let s:comment_grey     = { "cterm": "240" } " 585858
-let s:gutter_fg_grey   = { "cterm": "237" } " 3a3a3a
-let s:cursor_grey      = { "cterm": "236" } " 303030
-let s:menu_grey        = { "cterm": "235" } " 262626
-let s:visual_grey      = { "cterm": "237" } " 3a3a3a
-let s:menu_grey        = { "cterm": "237" } " 3a3a3a
-let s:special_grey     = { "cterm": "238" } " 444444
+let s:comment_grey     = { "cterm": "242" } " 585858
+let s:gutter_fg_grey   = { "cterm": "240" } " 3a3a3a
+let s:cursor_grey      = { "cterm": "238" } " 303030
+let s:menu_grey        = { "cterm": "237" } " 262626
+let s:visual_grey      = { "cterm": "239" } " 3a3a3a
+let s:menu_grey        = { "cterm": "239" } " 3a3a3a
+let s:special_grey     = { "cterm": "240" } " 444444
 let s:vertsplit        = { "cterm": "59"  } " 5f5f5f
 
 " +---------------------------------------------------------+
