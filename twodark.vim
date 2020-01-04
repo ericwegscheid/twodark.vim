@@ -90,7 +90,7 @@ let s:cursor_grey      = { "cterm": "238" } " 303030
 let s:menu_grey        = { "cterm": "237" } " 262626
 let s:visual_grey      = { "cterm": "239" } " 3a3a3a
 let s:menu_grey        = { "cterm": "239" } " 3a3a3a
-let s:special_grey     = { "cterm": "240" } " 444444
+let s:special_grey     = { "cterm": "237" } " 262626
 let s:vertsplit        = { "cterm": "59"  } " 5f5f5f
 
 " +---------------------------------------------------------+
@@ -160,6 +160,7 @@ call s:h("MatchParen", { "fg": s:blue }) " The character under the cursor or jus
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
+call s:h("Whitespace", { "fg": s:special_grey })
 
 call s:h("Normal", { "fg": s:white, "bg": s:background }) " normal text
 call s:h("Normal", { "fg": s:white }) " normal text
@@ -396,4 +397,3 @@ hi link gitcommitSelected gitcommitComment
 hi link gitcommitDiscardedArrow gitcommitDiscardedFile
 hi link gitcommitSelectedArrow gitcommitSelectedFile
 hi link gitcommitUnmergedArrow gitcommitUnmergedFile
-
