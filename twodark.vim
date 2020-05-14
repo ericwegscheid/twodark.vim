@@ -81,23 +81,21 @@ let s:grey             = { "cterm": "60"  } " 5f5f87
 let s:black            = { "cterm": "16"  } " 121212
 let s:black_dark       = { "cterm": "16"  } " 000000
 
-let s:visual_black     = { "cterm": "NONE"} " none
-let s:background       = { "cterm": "16"  } " 000000
-let s:bg_dark          = { "cterm": "233" } " 121212
-let s:comment_grey     = { "cterm": "242" } " 585858
-let s:gutter_fg_grey   = { "cterm": "240" } " 3a3a3a
-let s:cursor_grey      = { "cterm": "238" } " 303030
-let s:menu_grey        = { "cterm": "237" } " 262626
-let s:visual_grey      = { "cterm": "239" } " 3a3a3a
-let s:menu_grey        = { "cterm": "239" } " 3a3a3a
-let s:special_grey     = { "cterm": "240" } " 444444
-let s:vertsplit        = { "cterm": "59"  } " 5f5f5f
+let s:grey_1           = { "cterm": "234" } " 1c1c1c
+let s:grey_2           = { "cterm": "235" } " 262626
+let s:grey_3           = { "cterm": "236" } " 303030
+let s:grey_4           = { "cterm": "237" } " 3a3a3a
+let s:grey_5           = { "cterm": "238" } " 444444
+let s:grey_6           = { "cterm": "239" } " 4e4e4e
+let s:grey_7           = { "cterm": "240" } " 585858
+
+let s:none             = { "cterm": "NONE"} " none
 
 " +---------------------------------------------------------+
 " | Syntax Groups (descriptions and ordering from `:h w18`) |
 " +---------------------------------------------------------+
 
-call s:h("Comment", { "fg": s:comment_grey, "cterm": "italic" }) " any comment
+call s:h("Comment", { "fg": s:grey_6, "cterm": "italic" }) " any comment
 call s:h("Constant", { "fg": s:cyan }) " any constant
 call s:h("String", { "fg": s:green }) " a string constant: 'this is a string'
 call s:h("Character", { "fg": s:green }) " a character constant: 'c', '\n'
@@ -137,51 +135,52 @@ call s:h("Todo", { "fg": s:red }) " anything that needs extra attention; mostly 
 " | Highlighting Groups (descriptions and ordering from `:h hitest.vim`) |
 " +----------------------------------------------------------------------+
 
-call s:h("ColorColumn", { "bg": s:bg_dark }) " used for the columns set with 'colorcolumn'
+call s:h("ColorColumn", { "bg": s:black_dark }) " used for the columns set with 'colorcolumn'
 call s:h("Conceal", {}) " placeholder characters substituted for concealed text (see 'conceallevel')
 call s:h("Cursor", { "fg": s:black, "bg": s:blue }) " the character under the cursor
 call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
-call s:h("CursorColumn", { "bg": s:cursor_grey }) " the screen column that the cursor is in when 'cursorcolumn' is set
-call s:h("CursorLine", { "bg": s:cursor_grey }) " the screen line that the cursor is in when 'cursorline' is set
+call s:h("CursorColumn", { "bg": s:grey_2 }) " the screen column that the cursor is in when 'cursorcolumn' is set
+call s:h("CursorLine", { "bg": s:grey_2 }) " the screen line that the cursor is in when 'cursorline' is set
 call s:h("Directory", { "fg": s:blue }) " directory names (and other special names in listings)
 call s:h("DiffAdd", { "fg": s:green }) " diff mode: Added line
 call s:h("DiffChange", { "fg": s:yellow_dark }) " diff mode: Changed line
 call s:h("DiffDelete", { "fg": s:red }) " diff mode: Deleted line
 call s:h("DiffText", { "fg": s:blue }) " diff mode: Changed text within a changed line
 call s:h("ErrorMsg", {}) " error messages on the command line
-call s:h("VertSplit", { "fg": s:vertsplit }) " the column separating vertically split windows
-call s:h("Folded", { "fg": s:gutter_fg_grey }) " line used for closed folds
+call s:h("VertSplit", { "bg": s:grey_1 }) " the column separating vertically split windows
+call s:h("Folded", { "fg": s:grey_3 }) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:black, "bg": s:cyan }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
-call s:h("LineNr", { "fg": s:gutter_fg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+call s:h("LineNr", { "fg": s:grey_5, "bg": s:grey_1 }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set (gutter).
 call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call s:h("MatchParen", { "fg": s:blue }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
-call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
+call s:h("NonText", { "fg": s:grey_1 }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
+call s:h("Whitespace", { "fg": s:grey_1 })
 
-call s:h("Normal", { "fg": s:white, "bg": s:background }) " normal text
+call s:h("Normal", { "fg": s:white, "bg": s:black_dark }) " normal text
 call s:h("Normal", { "fg": s:white }) " normal text
-call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
+call s:h("Pmenu", { "bg": s:grey_3 }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:black_dark, "bg": s:grey }) " Popup menu: selected item.
-call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
+call s:h("PmenuSbar", { "bg": s:grey_1 }) " Popup menu: scrollbar.
 call s:h("PmenuThumb", { "bg": s:white }) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", { "fg": s:purple }) " hit-enter prompt and yes/no questions
 call s:h("Search", { "fg": s:black, "bg": s:green }) " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
-call s:h("SpecialKey", { "fg": s:special_grey }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
+call s:h("SpecialKey", { "fg": s:grey_1 }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
 call s:h("SpellBad", { "fg": s:red, "cterm": "underline" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", { "fg": s:yellow_dark }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:yellow_dark }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:yellow_dark }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
 call s:h("StatusLine", { "fg": s:black, "bg": s:purple }) " status line of current window
-call s:h("StatusLineNC", { "fg": s:black, "bg": s:gutter_fg_grey }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-call s:h("TabLine", { "fg": s:grey }) " tab pages line, not active tab page label
+call s:h("StatusLineNC", { "fg": s:grey_5, "bg": s:grey_1 }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+call s:h("TabLine", { "fg": s:grey }) " black_dark pages line, not active tab page label
 call s:h("TabLineFill", {}) " tab pages line, where there are no labels
-call s:h("TabLineSel", { "fg": s:yellow_dark }) " tab pages line, active tab page label
+call s:h("tablinesel", { "fg": s:yellow_dark }) " tab pages line, active tab page label
 call s:h("Title", { "fg": s:green }) " titles for output from ":set all", ":autocmd" etc.
-call s:h("Visual", { "fg": s:visual_black, "bg": s:visual_grey }) " Visual mode selection
-call s:h("VisualNOS", { "bg": s:visual_grey }) " Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
+call s:h("Visual", { "fg": s:none, "bg": s:grey_2 }) " Visual mode selection
+call s:h("VisualNOS", { "bg": s:grey_3 }) " Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 call s:h("WarningMsg", { "fg": s:red }) " warning messages
 call s:h("WildMenu", {}) " current match in 'wildmenu' completion
 
@@ -269,8 +268,8 @@ call s:h("markdownCode", { "fg": s:green_dark })
 call s:h("markdownCodeBlock", { "fg": s:white })
 call s:h("markdownCodeDelimiter", { "fg": s:green })
 call s:h("markdownHeadingDelimiter", { "fg": s:red })
-call s:h("markdownRule", { "fg": s:comment_grey })
-call s:h("markdownHeadingRule", { "fg": s:comment_grey })
+call s:h("markdownRule", { "fg": s:grey_4 })
+call s:h("markdownHeadingRule", { "fg": s:grey_4 })
 call s:h("markdownH1", { "fg": s:red })
 call s:h("markdownH2", { "fg": s:red })
 call s:h("markdownH3", { "fg": s:red })
@@ -279,7 +278,7 @@ call s:h("markdownH5", { "fg": s:red })
 call s:h("markdownH6", { "fg": s:red })
 call s:h("markdownIdDelimiter", { "fg": s:purple })
 call s:h("markdownId", { "fg": s:purple })
-call s:h("markdownBlockquote", { "fg": s:comment_grey })
+call s:h("markdownBlockquote", { "fg": s:grey_4 })
 call s:h("markdownItalic", { "fg": s:purple, "cterm": "italic" })
 call s:h("markdownBold", { "fg": s:yellow_dark, "cterm": "bold" })
 call s:h("markdownListMarker", { "fg": s:red })
@@ -377,7 +376,7 @@ call s:h("diffRemoved", { "fg": s:red })
 " | Git Highlighting |
 " +------------------+
 
-call s:h("gitcommitComment", { "fg": s:comment_grey })
+call s:h("gitcommitComment", { "fg": s:grey_4 })
 call s:h("gitcommitUnmerged", { "fg": s:green })
 call s:h("gitcommitOnBranch", {})
 call s:h("gitcommitBranch", { "fg": s:purple })
