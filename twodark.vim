@@ -91,6 +91,9 @@ let s:grey_7           = { "cterm": "240" } " 585858
 
 let s:none             = { "cterm": "NONE"} " none
 
+" TODO - created highlight keywords for colors i.e. RED, RED_BRIGHT, and so on
+" that way i can just use those in the syntax files - or maybe here somehow
+
 " +---------------------------------------------------------+
 " | Syntax Groups (descriptions and ordering from `:h w18`) |
 " +---------------------------------------------------------+
@@ -135,7 +138,7 @@ call s:h("Todo", { "fg": s:red }) " anything that needs extra attention; mostly 
 " | Highlighting Groups (descriptions and ordering from `:h hitest.vim`) |
 " +----------------------------------------------------------------------+
 
-call s:h("ColorColumn", { "bg": s:black_dark }) " used for the columns set with 'colorcolumn'
+call s:h("ColorColumn", { "bg": s:grey_1 }) " used for the columns set with 'colorcolumn'
 call s:h("Conceal", {}) " placeholder characters substituted for concealed text (see 'conceallevel')
 call s:h("Cursor", { "fg": s:black, "bg": s:blue }) " the character under the cursor
 call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
@@ -147,12 +150,12 @@ call s:h("DiffChange", { "fg": s:yellow_dark }) " diff mode: Changed line
 call s:h("DiffDelete", { "fg": s:red }) " diff mode: Deleted line
 call s:h("DiffText", { "fg": s:blue }) " diff mode: Changed text within a changed line
 call s:h("ErrorMsg", {}) " error messages on the command line
-call s:h("VertSplit", { "bg": s:grey_1 }) " the column separating vertically split windows
+call s:h("VertSplit", { "bg": s:none }) " the column separating vertically split windows
 call s:h("Folded", { "fg": s:grey_3 }) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:black, "bg": s:cyan }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
-call s:h("LineNr", { "fg": s:grey_5, "bg": s:grey_1 }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set (gutter).
+call s:h("LineNr", { "fg": s:grey_5 }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set (gutter).
 call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call s:h("MatchParen", { "fg": s:blue }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
@@ -395,3 +398,4 @@ hi link gitcommitSelected gitcommitComment
 hi link gitcommitDiscardedArrow gitcommitDiscardedFile
 hi link gitcommitSelectedArrow gitcommitSelectedFile
 hi link gitcommitUnmergedArrow gitcommitUnmergedFile
+
