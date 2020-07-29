@@ -78,7 +78,7 @@ let s:cyan_dark        = { "cterm": "31"  } " 0087af
 let s:white            = { "cterm": "246" } " 949494
 let s:grey             = { "cterm": "60"  } " 5f5f87
 
-let s:black            = { "cterm": "16"  } " 121212
+let s:black            = { "cterm": "16"  } " 000000
 let s:black_dark       = { "cterm": "16"  } " 000000
 
 let s:grey_1           = { "cterm": "234" } " 1c1c1c
@@ -98,7 +98,7 @@ let s:none             = { "cterm": "NONE"} " none
 " | Syntax Groups (descriptions and ordering from `:h w18`) |
 " +---------------------------------------------------------+
 
-call s:h("Comment", { "fg": s:grey_6, "cterm": "italic" }) " any comment
+call s:h("Comment", { "fg": s:green_dark, "cterm": "italic" }) " any comment
 call s:h("Constant", { "fg": s:cyan }) " any constant
 call s:h("String", { "fg": s:green }) " a string constant: 'this is a string'
 call s:h("Character", { "fg": s:green }) " a character constant: 'c', '\n'
@@ -151,7 +151,7 @@ call s:h("DiffDelete", { "fg": s:red }) " diff mode: Deleted line
 call s:h("DiffText", { "fg": s:blue }) " diff mode: Changed text within a changed line
 call s:h("ErrorMsg", {}) " error messages on the command line
 call s:h("VertSplit", { "bg": s:none }) " the column separating vertically split windows
-call s:h("Folded", { "fg": s:grey_3 }) " line used for closed folds
+call s:h("Folded", { "fg": s:green_dark }) " line used for closed folds
 call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:black, "bg": s:cyan }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -176,8 +176,8 @@ call s:h("SpellBad", { "fg": s:red, "cterm": "underline" }) " Word that is not r
 call s:h("SpellCap", { "fg": s:yellow_dark }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:yellow_dark }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:yellow_dark }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-call s:h("StatusLine", { "fg": s:black, "bg": s:purple }) " status line of current window
-call s:h("StatusLineNC", { "fg": s:grey_5, "bg": s:grey_1 }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+call s:h("StatusLine", { "fg": s:black, "bg": s:purple_dark }) " status line of current window
+call s:h("StatusLineNC", { "fg": s:white, "bg": s:grey_2 }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 call s:h("TabLine", { "fg": s:grey }) " black_dark pages line, not active tab page label
 call s:h("TabLineFill", {}) " tab pages line, where there are no labels
 call s:h("tablinesel", { "fg": s:yellow_dark }) " tab pages line, active tab page label
